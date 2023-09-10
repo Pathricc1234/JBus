@@ -10,6 +10,7 @@ public class JBus
         int afterDiscount = 900;
         int numberOfSeat = 2;
         int totalPrice;
+        int discPrice;
         int oriPrice;
         String busName;
         boolean Discount;
@@ -21,22 +22,24 @@ public class JBus
         System.out.println(Discount);
         discountPercentage = ex.getDiscountPercentage(beforeDiscount,afterDiscount);
         System.out.println(discountPercentage);
-        oriPrice = ex.getDiscountedPrice(afterDiscount,discountPercentage);
+        discPrice = ex.getDiscountedPrice(beforeDiscount,discountPercentage);
+        System.out.println(discPrice);
+        oriPrice = ex.getOriginalPrice(discPrice,discountPercentage);
         System.out.println(oriPrice);
         totalPrice = ex.getTotalPrice(afterDiscount,numberOfSeat);
         System.out.println(totalPrice);
     }
-    public int getBusId(){
+    public static int getBusId(){
         return 0;
     }
-    public String getBusName(){
+    public static String getBusName(){
         return "Bus";
     }
-    public boolean isDiscount(){
+    public static boolean isDiscount(){
         return true;
     }
-    public int getDiscountPercentage(int beforeDiscount, int afterDiscount){
-        if(beforeDiscount <= afterDiscount){
+    public static int getDiscountPercentage(int beforeDiscount, int afterDiscount){
+        if(beforeDiscount < afterDiscount){
             return 0;
         }
         else{
@@ -44,27 +47,35 @@ public class JBus
             return discount;
         }
     }
-    public int getDiscountedPrice(int price, float discountPercentage){
-        if(discountPercentage >= 100.0){
-            return 0;
+    public static int getDiscountedPrice(int price, float discountPercentage){
+        if(discountPercentage > 100.0){
+            discountPercentage = 100;
         }
-        else{
-            float fprice = (float)price;
-            fprice = 100 / (100 - discountPercentage) * fprice;
-            price = (int)fprice;
-            return price;
-        }
+        float fprice = (float)price;
+        fprice = (100 - discountPercentage) / 100 * fprice;
+        price = (int)fprice;
+        return price;
     }
-    public float getAdminFeePercentage(){
+    public static int getOriginalPrice(int discountedPrice, float discountPercentage){
+        if(discountPercentage > 100.0){
+            discountPercentage = 100;
+        }
+        float fdiscountedPrice = (float)discountedPrice;
+        fdiscountedPrice = 100 / (100 - discountPercentage) * fdiscountedPrice;
+        discountedPrice = (int)fdiscountedPrice;
+        return discountedPrice;
+    }
+    public static float getAdminFeePercentage(){
         return 0.05f;
     }
-    public int getAdminFee(int price){
-        return price * 5 / 100;
+    public static int getAdminFee(int price){
+        float percent = getAdminFeePercentage();
+        float fAdminFee = price * percent;
+        int adminFee = (int)fAdminFee;
+        return adminFee;
     }
-    public int getTotalPrice(int price, int numberOfSeat){
-        int admin;
-        admin = getAdminFee(price);
-        price = price + admin;
+    public static int getTotalPrice(int price, int numberOfSeat){
+        price = price + getAdminFee(price);
         return price * numberOfSeat;
     }
 }
