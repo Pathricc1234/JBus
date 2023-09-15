@@ -1,7 +1,7 @@
 package tJokordeGdeAgungAbelPutraJBusER;
 public class Rating{
-    long count;
-    long total;
+    private long count;
+    private long total;
     
     public Rating(){
         this.total = 0;
