@@ -1,4 +1,4 @@
-package tJokordeGdeAgungAbelPutraJBusER;
+package TJokordeGdeAgungAbelPutraJBusER;
 enum Facility{
     AC,
     LUNCH,

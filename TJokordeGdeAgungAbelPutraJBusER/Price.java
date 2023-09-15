@@ -1,4 +1,4 @@
-package tJokordeGdeAgungAbelPutraJBusER;
+package TJokordeGdeAgungAbelPutraJBusER;
 public class Price{
     double rebate;
     double price;

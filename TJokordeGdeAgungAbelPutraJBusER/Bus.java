@@ -1,4 +1,4 @@
-package tJokordeGdeAgungAbelPutraJBusER;
+package TJokordeGdeAgungAbelPutraJBusER;
 public class Bus{
     public int capacity;
     public Facility facility;

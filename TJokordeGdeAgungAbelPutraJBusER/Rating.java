@@ -1,4 +1,4 @@
-package tJokordeGdeAgungAbelPutraJBusER;
+package TJokordeGdeAgungAbelPutraJBusER;
 public class Rating{
     private long count;
     private long total;
