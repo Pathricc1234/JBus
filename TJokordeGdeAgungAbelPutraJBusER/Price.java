@@ -1,8 +1,8 @@
 package TJokordeGdeAgungAbelPutraJBusER;
 public class Price{
-    double rebate;
-    double price;
-    int discount;
+    public double rebate;
+    public double price;
+    public int discount;
     
     public Price(double price){
         this.price = price;
