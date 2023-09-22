@@ -1,6 +1,6 @@
 package TJokordeGdeAgungAbelPutraJBusER;
 
-enum city{
+enum City{
     JAKARTA,
     BANDUNG,
     DEPOK,
