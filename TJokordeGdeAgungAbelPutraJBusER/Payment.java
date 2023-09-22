@@ -19,4 +19,7 @@ public class Payment extends Invoice{
     public String print(){
         return "ID = " + busId + " Dept Date = " + departureDate + " BusSeat = " + busSeat;
     }
+    public int getBusId(){
+        return busId;
+    }
 }

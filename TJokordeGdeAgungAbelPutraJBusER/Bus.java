@@ -12,4 +12,7 @@ public class Bus extends Serializable{
         this.price = price;
         this.capacity = capacity;
     }
+    public int getId() {
+        return id;
+    }
 }

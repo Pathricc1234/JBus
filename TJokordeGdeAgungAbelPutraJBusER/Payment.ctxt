@@ -6,4 +6,6 @@ comment2.params=id\ buyer\ renter\ time\ busId\ departureDate\ busSeat
 comment2.target=Payment(int,\ Account,\ Renter,\ java.lang.String,\ int,\ java.lang.String,\ java.lang.String)
 comment3.params=
 comment3.target=java.lang.String\ print()
-numComments=4
+comment4.params=
+comment4.target=int\ getBusId()
+numComments=5

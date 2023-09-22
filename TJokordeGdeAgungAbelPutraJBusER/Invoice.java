@@ -14,6 +14,8 @@ public class Invoice extends Serializable{
     public Invoice(int id, Account buyer, Renter renter, String time){
         super(id);
         this.time = time;
+        this.buyerId = buyer.id;
+        this.renterId = renter.id;
     }
     public String print(){
         String b = Integer.toString(buyerId);
