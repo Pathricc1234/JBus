@@ -21,4 +21,9 @@ public class Rating{
     public long getTotal(){
         return this.total;
     }
+    public String toString(){
+        String count_str = String.valueOf(this.count);
+        String total_str = String.valueOf(this.total);
+        return count_str + total_str;
+    }
 }

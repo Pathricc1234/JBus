@@ -11,4 +11,9 @@ public class Price{
         this.price = price;
         this.rebate = rebate;
     }
+    public String toString(){
+        String rebate_str = String.valueOf(this.rebate);
+        String price_str = String.valueOf(this.price);
+        return rebate_str + price_str;
+    }
 }

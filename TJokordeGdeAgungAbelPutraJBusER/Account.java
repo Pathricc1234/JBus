@@ -1,5 +1,4 @@
 package TJokordeGdeAgungAbelPutraJBusER;
-
 public class Account extends Serializable{
     public String email;
     public String name;
@@ -10,5 +9,9 @@ public class Account extends Serializable{
         this.email = email;
         this.name = name;
         this.password = password;
+    }
+    
+    public String toString(){
+        return email + name + password;
     }
 }
