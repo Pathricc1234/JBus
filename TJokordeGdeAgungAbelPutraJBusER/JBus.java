@@ -1,17 +1,42 @@
 package TJokordeGdeAgungAbelPutraJBusER;
+import java.util.Calendar;
+
 public class JBus{
-    public static void main(String[] args){
-        Review testReview = new Review(1, "23 august 2023", "Bad Quality");
-        Price testPrice = new Price(100000, 20000);
-        Station testDeparture = new Station(2, "Depok Terminal", City.DEPOK, "Jl. Margonda Raya");
-        Station testArrival = new Station(3, "Halte UI", City.JAKARTA, "Universitas Indonesia");
-        Bus testBus = new Bus(1, "Busway", Facility.AC, testPrice, 50, BusType.REGULER, City.DEPOK, testDeparture, testArrival);
-        Account testAccount = new Account(1, "Bob", "bob@gmail.com", "bob");
-        Rating testRating = new Rating();
-        System.out.println(testReview);
-        System.out.println(testBus);
-        System.out.println(testAccount);
-        System.out.println(testPrice);
-        System.out.println(testRating);
+    public static void main(String[] args){        
+        Price[] unfilteredArray = new Price[5];
+        for(int i = 0; i < unfilteredArray.length; i++){
+            int j = 5000;
+            unfilteredArray[i] = new Price((i+1)*j);
+        }
+        System.out.println("Price List");
+        for(Price price : unfilteredArray){
+            System.out.println(price.price);
+        }
+        System.out.println("Bellow 12000.0");
+        System.out.println(Validate.filter(unfilteredArray, 12000,true));
+        System.out.println("Above 10000.0");
+        System.out.println(Validate.filter(unfilteredArray, 10000,false));
+        
+        Bus testBus = createBus();
+        
+        Payment testPayment = new Payment(1, 1, 1, testBus.id, "S1");
+        System.out.println(testPayment.getDepartureInfo());
+        System.out.println(testPayment.getTime());
+        
+        Calendar schedule1 = Calendar.getInstance();
+        testBus.addSchedule(schedule1);
+        Calendar schedule2 = Calendar.getInstance();
+        schedule2.add(Calendar.DAY_OF_MONTH, 3);
+        testBus.addSchedule(schedule2);
+        
+        for(Schedule s: testBus.schedules){
+            testBus.printSchedule(s);
+        }
+    }
+    
+    public static Bus createBus() {
+        Price price = new Price(750000, 5);
+        Bus bus = new Bus(1, "Netlab Bus", Facility.LUNCH, price, 25, BusType.REGULER, City.BANDUNG, new Station(1, "Depok Terminal", City.DEPOK, "Jl. Margonda Raya"), new Station(2, "Halte UI", City.JAKARTA, "Universitas Indonesia"));
+        return bus;
     }
 }

@@ -1,5 +1,8 @@
 package TJokordeGdeAgungAbelPutraJBusER;
-public class Bus extends Serializable{
+import java.util.*;
+import java.util.Calendar;
+
+public class Bus extends Serializable implements FileParser{
     public int capacity;
     public Facility facility;
     public String name;
@@ -8,6 +11,25 @@ public class Bus extends Serializable{
     public City city;
     public Station departure;
     public Station arrival;
+    List <Schedule> schedules;
+    
+    public Object write(){
+        return null;
+    }
+    
+    public boolean read(String content){
+        return false;
+    }
+    
+    public void addSchedule(Calendar calendar){
+        List <Schedule> schedules = new ArrayList <Schedule>();
+        schedules.add(new Schedule(calendar, this.capacity));
+    }
+    
+    public void printSchedule (Schedule schedule){
+        System.out.println("Tanggal Keberangkatan"+ schedule.departureSchedule.getTime());
+        System.out.println("Daftar Kursi dan Ketersediaan Kursinya: ");
+    }
     
     public Bus(int id,String name, Facility facility, Price price, int capacity, BusType busType, City city, Station departure, Station arrival){
         super(id);
