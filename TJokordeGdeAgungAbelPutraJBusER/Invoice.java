@@ -1,8 +1,8 @@
 package TJokordeGdeAgungAbelPutraJBusER;
-import java.util.Calendar;
+import java.sql.Timestamp;
 
 public class Invoice extends Serializable{
-    public Calendar time;
+    public Timestamp time;
     public int buyerId;
     public int renterId;
     public BusRating rating;
@@ -25,21 +25,16 @@ public class Invoice extends Serializable{
         super(id);
         this.buyerId = buyerId;
         this.renterId = renterId;
-        this.time = Calendar.getInstance();
+        this.time = time;
         this.rating = BusRating.NONE;
         this.status = PaymentStatus.WAITING;
     }
     public Invoice(int id, Account buyer, Renter renter){
         super(id);
-        this.time = Calendar.getInstance();
+        this.time = time;
         this.buyerId = buyer.id;
         this.renterId = renter.id;
         this.rating = BusRating.NONE;
         this.status = PaymentStatus.WAITING;
-    }
-    public String toString(){
-        String b = Integer.toString(buyerId);
-        String r = Integer.toString(renterId);
-        return "Time = " + time + " BuyerId = " + b + " RenterID = " + r;
     }
 }

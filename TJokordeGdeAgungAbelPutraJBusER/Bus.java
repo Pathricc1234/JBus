@@ -1,6 +1,7 @@
 package TJokordeGdeAgungAbelPutraJBusER;
 import java.util.*;
 import java.util.Calendar;
+import java.sql.Timestamp;
 
 public class Bus extends Serializable implements FileParser{
     public int capacity;
@@ -11,25 +12,7 @@ public class Bus extends Serializable implements FileParser{
     public City city;
     public Station departure;
     public Station arrival;
-    List <Schedule> schedules;
-    
-    public Object write(){
-        return null;
-    }
-    
-    public boolean read(String content){
-        return false;
-    }
-    
-    public void addSchedule(Calendar calendar){
-        List <Schedule> schedules = new ArrayList <Schedule>();
-        schedules.add(new Schedule(calendar, this.capacity));
-    }
-    
-    public void printSchedule (Schedule schedule){
-        System.out.println("Tanggal Keberangkatan"+ schedule.departureSchedule.getTime());
-        System.out.println("Daftar Kursi dan Ketersediaan Kursinya: ");
-    }
+    List <Schedule> schedules = new ArrayList<>();
     
     public Bus(int id,String name, Facility facility, Price price, int capacity, BusType busType, City city, Station departure, Station arrival){
         super(id);
@@ -42,10 +25,19 @@ public class Bus extends Serializable implements FileParser{
         this.departure = departure;
         this.arrival = arrival;
     }
-    public int getId() {
-        return id;
+    public Object write(){
+        return null;
+    }
+    public boolean read(String content){
+        return false;
+    }
+    public void addSchedule(Timestamp schedule) { 
+        schedules.add(new Schedule(schedule, this.capacity));
     }
     public String toString(){
         return name + facility + price + capacity + busType + city + departure + arrival;
+    }
+    public int getId() {
+        return id;
     }
 }
