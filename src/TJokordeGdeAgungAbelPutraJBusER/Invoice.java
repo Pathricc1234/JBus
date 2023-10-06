@@ -21,16 +21,16 @@ public class Invoice extends Serializable{
         BAD;
     }
     
-    protected Invoice(int id, int buyerId, int renterId){
-        super(id);
+    protected Invoice(int buyerId, int renterId){
+        super();
         this.buyerId = buyerId;
         this.renterId = renterId;
         this.time = time;
         this.rating = BusRating.NONE;
         this.status = PaymentStatus.WAITING;
     }
-    public Invoice(int id, Account buyer, Renter renter){
-        super(id);
+    public Invoice(Account buyer, Renter renter){
+        super();
         this.time = time;
         this.buyerId = buyer.id;
         this.renterId = renter.id;

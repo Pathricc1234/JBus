@@ -1,7 +1,7 @@
 package TJokordeGdeAgungAbelPutraJBusER;
 
 
-interface FileParser{
+public  interface FileParser{
     public abstract Object write();
     public abstract boolean read(String content);
 }
