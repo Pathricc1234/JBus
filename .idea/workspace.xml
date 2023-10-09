@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69225879-d3f7-4406-833b-b1c9498a45d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Algorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Predicate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Bus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Bus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/FileParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/FileParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/JBus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/JBus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Renter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Renter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Serializable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Serializable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Schedule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Station.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Station.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Voucher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/Voucher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,22 +94,14 @@
       <updated>1696505910950</updated>
       <workItem from="1696505912008" duration="281000" />
       <workItem from="1696506199345" duration="12693000" />
-      <workItem from="1696561114603" duration="6105000" />
+      <workItem from="1696561114603" duration="6327000" />
+      <workItem from="1696576834091" duration="46000" />
+      <workItem from="1696840588770" duration="1041000" />
+      <workItem from="1696853011354" duration="7750000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/TJokordeGdeAgungAbelPutraJBusER/JBus.java</url>
-          <line>5</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 public class Schedule{
     public Timestamp departureSchedule;
     Map<String, Boolean> seatAvailability;
+
     public Schedule(Timestamp departureSchedule, int numberOfSeats){
         this.departureSchedule = departureSchedule;
         seatAvailability = new HashMap<>();
@@ -45,5 +46,28 @@ public class Schedule{
             currentSeat++;
         }
         System.out.println("\n");
+    }
+    public void bookSeat(List<String> seat) {
+        for (String seats : seat) {
+            if (seatAvailability.containsKey(seats) && seatAvailability.get(seats)) {
+                seatAvailability.put(seats, false);
+            }
+        }
+    }
+    public boolean isSeatAvailable(List<String> seats) {
+        for (String seat : seats) {
+            Boolean available = seatAvailability.get(seat);
+            if (available == null || !available) {
+                return false;
+            }
+        }
+        return true;
+    }
+    public String toString(){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String formatted = dateFormat.format(this.departureSchedule.getTime());
+        int occupied = Algorithm.count(seatAvailability.values().iterator(), false);
+        int total = seatAvailability.size();
+        return "Schedule: " + formatted + "\n" + "Occupied: " + occupied + "/" + total;
     }
 }

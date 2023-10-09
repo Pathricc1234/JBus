@@ -1,6 +1,8 @@
 package TJokordeGdeAgungAbelPutraJBusER;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.text.*;
+import java.util.List;
 
 public class Payment extends Invoice{
     private int busId;
@@ -18,16 +20,8 @@ public class Payment extends Invoice{
         this.departureDate = departureDate;
         this.busSeat = busSeat;
     }
-        public int getBusId(){
+    public int getBusId(){
         return busId;
-    }
-    public static boolean isAvailable(Timestamp departureSchedule, String seat, Bus bus){
-        for(Schedule s: bus.schedules){
-            if(s.isSeatAvailable(seat) == true && s.departureSchedule.equals(departureSchedule) == true){
-                return true;
-            }
-        }
-        return false;
     }
     public static boolean makeBooking(Timestamp departureSchedule, String seat, Bus bus){
         for (Schedule schedule : bus.schedules) {
@@ -45,5 +39,28 @@ public class Payment extends Invoice{
         SimpleDateFormat SDFormat = new SimpleDateFormat("MM dd, yyyy hh:mm:ss");
         String f_date =  SDFormat.format(departureDate.getTime());
         return f_date;
+    }
+    public static Schedule availableSchedule(Timestamp departureSchedule, String seat, Bus bus) {
+        Predicate<Schedule> condition = schedule -> schedule.departureSchedule.equals(departureSchedule) && schedule.isSeatAvailable(seat);
+        return Algorithm.find(bus.schedules, condition);
+    }
+    public static Schedule availableSchedule(Timestamp departureSchedule, List<String> seats, Bus bus) {
+        for (Schedule schedule : bus.schedules) {
+            if (schedule.departureSchedule.equals(departureSchedule)) {
+                return schedule;
+            }
+        }
+        return null;
+    }
+    public static boolean makeBooking(Timestamp departureSchedule, List<String> seats, Bus bus) {
+        boolean booked = false;
+        for (String seat : seats) {
+            Schedule schedule = availableSchedule(departureSchedule, seat, bus);
+            if (schedule != null) {
+                schedule.bookSeat(seat);
+                booked = true;
+            }
+        }
+        return booked;
     }
 }
