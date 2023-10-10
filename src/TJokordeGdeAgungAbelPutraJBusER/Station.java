@@ -12,6 +12,6 @@ public class Station extends Serializable{
         this.address = address;
     }
     public String toString(){
-        return "Station = " + stationName + " City = " + city + " address =" + address;
+        return "Station Id : " + id + " Station Name: " + stationName + " City: " + city + " Address: " + address;
     }
 }
