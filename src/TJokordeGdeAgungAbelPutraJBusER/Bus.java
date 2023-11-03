@@ -3,7 +3,11 @@ import java.util.*;
 import java.util.Calendar;
 import java.sql.Timestamp;
 
-public class Bus extends Serializable implements FileParser{
+/**
+ * Class bus berisi informasi mengenai bus
+ * dan menggunakan parrent class {@link Serializable}
+ */
+public class Bus extends Serializable{
     public int capacity;
     public Facility facility;
     public String name;
@@ -13,7 +17,17 @@ public class Bus extends Serializable implements FileParser{
     public Station departure;
     public Station arrival;
     List <Schedule> schedules = new ArrayList<>();
-    
+
+    /**
+     * @param name berisi nama dari user
+     * @param facility fasilitas yang dipilih user dari enum {@link Facility}
+     * @param price harga dari tiket bus
+     * @param capacity kapasitas bus
+     * @param busType tipe dari bis dari enum {@link Facility}
+     * @param city kota asal {@link City}
+     * @param departure tempat asal bus
+     * @param arrival tempat tujuan bus
+     */
     public Bus(String name, Facility facility, Price price, int capacity, BusType busType, City city, Station departure, Station arrival){
         super();
         this.name = name;
@@ -31,11 +45,16 @@ public class Bus extends Serializable implements FileParser{
     public boolean read(String content){
         return false;
     }
-    public void addSchedule(Timestamp schedule) { 
-        schedules.add(new Schedule(schedule, this.capacity));
-    }
-    public String toString(){
-        return name + facility + price + capacity + busType + city + departure + arrival;
+    public void addSchedule(Schedule newSchedule) {
+        try {
+            if (schedules.contains(newSchedule)) {
+                throw new IllegalArgumentException("Jadwal sudah ada dalam daftar.");
+            }
+            schedules.add(newSchedule);
+        }
+        catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
     public int getId() {
         return id;
