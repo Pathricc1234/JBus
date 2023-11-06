@@ -1,5 +1,8 @@
 package TJokordeGdeAgungAbelPutraJBusER;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * The {@code Account} merepresentasikan akun dari user
  * dan parent class {@link Serializable}
@@ -13,6 +16,9 @@ public class Account extends Serializable{
     public String name;
     /** password user */
     public String password;
+    /** REGEX untuk mengecek email dan password */
+    public final String REGEX_EMAIL = "netlab@ui.ac.id";
+    public final String REGEX_PASSWORD = "Password1234";
 
     /**
      * @return null karena kosong
@@ -47,5 +53,18 @@ public class Account extends Serializable{
      */
     public String toString(){
         return email + name + password;
+    }
+
+    public boolean validate(String REGEX_EMAIL, String REGEX_PASSWORD){
+        Pattern email = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)[a-zA-Z\\\\d]{8,}$");
+        Pattern password = Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z]+\\\\.[a-zA-Z]{2,4}$");
+        Matcher emailMatcher = email.matcher(REGEX_EMAIL);
+        Matcher passwordMatcher = password.matcher(REGEX_PASSWORD);
+        boolean emailFound = emailMatcher.find();
+        boolean passwordFound = passwordMatcher.find();
+        if(emailFound && passwordFound){
+            return true;
+        }
+        return false;
     }
 }

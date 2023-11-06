@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class Renter extends Serializable{
     public String address;
     public String companyName;
-    public int phoneNumber;
+    public String phoneNumber;
     public final String REGEX_PHONE = "123456789";
     public final String REGEX_NAME = "Abcdef_ghij";
     
@@ -13,21 +13,15 @@ public class Renter extends Serializable{
         super();
         this.address = "";
         this.companyName = companyName;
-        this.phoneNumber = 0;
+        this.phoneNumber = "";
     }
-    public Renter( String companyName, String address){
-        super();
-        this.address = address;
-        this.companyName = companyName;
-        this.phoneNumber = 0;
-    }
-    public Renter(String companyName, int phoneNumber){
+    public Renter(String companyName, String phoneNumber){
         super();
         this.address = "";
         this.companyName = companyName;
         this.phoneNumber = phoneNumber;
     }
-    public Renter(String companyName, int phoneNumber, String address){
+    public Renter(String companyName, String phoneNumber, String address){
         super();
         this.companyName = companyName;
         this.phoneNumber = phoneNumber;

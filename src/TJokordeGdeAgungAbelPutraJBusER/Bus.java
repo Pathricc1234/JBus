@@ -45,12 +45,12 @@ public class Bus extends Serializable{
     public boolean read(String content){
         return false;
     }
-    public void addSchedule(Schedule newSchedule) {
+    public void addSchedule(Timestamp newSchedule) {
         try {
             if (schedules.contains(newSchedule)) {
                 throw new IllegalArgumentException("Jadwal sudah ada dalam daftar.");
             }
-            schedules.add(newSchedule);
+            schedules.add(new Schedule(newSchedule, this.capacity));
         }
         catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());

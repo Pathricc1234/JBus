@@ -1,42 +1,35 @@
 package TJokordeGdeAgungAbelPutraJBusER;
-import java.util.*;
+import java.util.HashMap;
 
-public class Serializable implements Comparable<Serializable>{
+public class Serializable {
     public final int id;
-    public static HashMap<Class<?>,Integer> mapCounter = new HashMap<>();
-
-    protected Serializable() {
-        Class<?> thisClass = this.getClass();
-        if (mapCounter.containsKey(thisClass)) {
-            id = mapCounter.get(thisClass) + 1;
-        } else {
-            id = 1;
-        }
-        mapCounter.put(thisClass, id);
+    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<Class <?>, Integer>();
+    protected Serializable(){
+        Integer counter = mapCounter.get(getClass());
+        counter = counter == null ? 0 : counter + 1;
+        mapCounter.put(getClass(), counter);
+        this.id = counter;
     }
 
-    public static <T> Integer setLastAssignedId (Class <T> thisClass, int id){
-        return mapCounter.put(thisClass, id);
+    public static <T> Integer getLastAssignedId(Class<T> getter ){
+        return mapCounter.get(getter);
     }
-    public static <T> Integer getLastAssignedId(Class<T> thisClass){
-        return mapCounter.get(thisClass);
+
+    public static <T> Integer setLastAssignedId(Class<T> setter, int number){
+        return mapCounter.put(setter, number);
     }
-    @Override
-    public int compareTo(Serializable serial) {
-        return Integer.compare(this.id, serial.id);
+
+    public int compareTo(Serializable temp){
+        return ((Integer)this.id).compareTo(temp.id);
     }
-    public boolean equals(Serializable serial){
-        if(serial.id == this.id){
-            return true;
-        }
-        return false;
+
+    public boolean equals(Serializable temp){
+        return temp.id == this.id;
     }
+
     public boolean equals(Object object){
-        if(object instanceof Serializable){
-            if(this.id == ((Serializable) object).id){
-                return true;
-            }
-        }
-        return false;
+        return object instanceof Serializable && ((Serializable) object).id == this.id;
     }
+
 }
+
