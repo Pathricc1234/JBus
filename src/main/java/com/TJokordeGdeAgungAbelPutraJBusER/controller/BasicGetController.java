@@ -2,9 +2,8 @@ package com.TJokordeGdeAgungAbelPutraJBusER.controller;
 
 import com.TJokordeGdeAgungAbelPutraJBusER.Algorithm;
 import com.TJokordeGdeAgungAbelPutraJBusER.JsonTable;
+import com.TJokordeGdeAgungAbelPutraJBusER.Serializable;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.Serializable;
 import java.util.*;
 
 public interface BasicGetController <T extends Serializable> {
@@ -13,7 +12,7 @@ public interface BasicGetController <T extends Serializable> {
 
     @GetMapping("/{id}")
     public default T getById(@PathVariable int id){
-        return Algorithm.<T>find(getJsonTable(),e->e.id == id);
+        return Algorithm.<T>find(getJsonTable(),a->a.id == id);
     }
 
     @RequestMapping(value = "/page", method = RequestMethod.GET)

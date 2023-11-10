@@ -1,0 +1,23 @@
+[
+  {
+    "email":"pbubble@gmail.com",
+    "name":"PrincessBubblegum1",
+    "password":"632ce418f76c3d678f1a326c2720e210",
+    "balance":0.0,
+    "id":0
+  },
+  {
+    "email":"siucok@gmail.com",
+    "name":"ucokbaba1",
+    "password":"c66fde8fa8ce27dd3bb71b1250ef4a4f",
+    "company":
+    {
+      "address":"medanmerdekautara",
+      "companyName":"bismania",
+      "phoneNumber":"1234567890",
+      "id":0
+    },
+    "balance":10000.0,
+    "id":1
+  }
+]

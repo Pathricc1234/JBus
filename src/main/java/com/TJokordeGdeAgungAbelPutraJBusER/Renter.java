@@ -6,8 +6,8 @@ public class Renter extends Serializable{
     public String address;
     public String companyName;
     public String phoneNumber;
-    public final String REGEX_PHONE = "123456789";
-    public final String REGEX_NAME = "Abcdef_ghij";
+    public static final String REGEX_PHONE = "[0-9{9,12}]";
+    public static final String REGEX_NAME = " ^[A-Za-z0-9_]{4,20}$";
     
     public Renter(String companyName){
         super();
@@ -28,11 +28,11 @@ public class Renter extends Serializable{
         this.address = address;
     }
 
-    public boolean validate(String REGEX_NAME, String REGEX_PHONE){
-        Pattern name = Pattern.compile("^[A-Za-z0-9_]{4,20}$");
-        Pattern phone = Pattern.compile("[0-9{9,12}]");
-        Matcher phoneMatch = phone.matcher(REGEX_PHONE);
-        Matcher nameMatch = name.matcher(REGEX_NAME);
+    public boolean validate(String name, String phone){
+        Pattern namePattern = Pattern.compile(REGEX_NAME);
+        Pattern phonePattern = Pattern.compile(REGEX_PHONE);
+        Matcher phoneMatch = phonePattern.matcher(phone);
+        Matcher nameMatch = namePattern.matcher(name);
         boolean nameFound = nameMatch.find();
         boolean phoneFound = phoneMatch.find();
         if(nameFound || phoneFound){
