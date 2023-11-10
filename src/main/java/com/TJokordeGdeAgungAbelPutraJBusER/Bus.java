@@ -45,6 +45,13 @@ public class Bus extends Serializable{
     public boolean read(String content){
         return false;
     }
+
+    /**
+     *
+     * @param newSchedule berisi waktu yang ingin ditambahkan
+     * jika waktu yang ingin ditambahkan sudah ada maka tidak akan menambahkan
+     * jika waktu yang ingin ditambahkan belum ada maka akan menambahkan  jadwal dengan waktu yang diinginkan
+     */
     public void addSchedule(Timestamp newSchedule) {
         try {
             if (schedules.contains(newSchedule)) {

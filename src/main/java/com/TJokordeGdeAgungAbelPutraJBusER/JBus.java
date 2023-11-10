@@ -8,36 +8,16 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.TJokordeGdeAgungAbelPutraJBusER.dbjson.JsonDBEngine;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
+import org.springframework.boot.SpringApplication;
 
 public class JBus {
     public static void main(String[] args) {
-        try {
-            JsonTable<Account> tableAccount = new JsonTable<>(Account.class, "C:\\Users\\ASUS\\OneDrive\\Documents\\Kuliah\\Tugas\\Semester 3\\Praktikum OOP\\CS\\Modul 1\\JBus\\data\\accountDatabase.json");
-            tableAccount.add(new Account("Dio", "dio@gmail.com", "NgikNgok"));
-            tableAccount.add(new Account("Dio", "dio@gmail.com", "NgikNgok"));
-            tableAccount.writeJson();
-
-            for (Account account : tableAccount){
-                System.out.println("Account ID: " + account.id + " Name: " + account.name + " Email: " + account.email + " Password: " + account.password);
-            }
-        } catch (Exception e) {
-            System.out.println("Terjadi kesalahan: " + e.getMessage());
-        }
-
-        Bus bus = createBus();
-        bus.schedules.forEach(Schedule::printSchedule);
-        for(int i =0; i < 10; i++){
-            BookingThread thread = new BookingThread("Thread " + i,bus, Timestamp.valueOf("2023-07-27 19:00:00"));
-        }
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        bus.schedules.forEach(Schedule::printSchedule);
-
+        JsonDBEngine.Run(JBus.class);
+        SpringApplication.run(JBus.class,args);
+        Runtime.getRuntime().addShutdownHook(new Thread(()-> JsonDBEngine.join()));
     }
 
     public static Bus createBus() {

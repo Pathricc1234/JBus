@@ -16,9 +16,11 @@ public class Account extends Serializable{
     public String name;
     /** password user */
     public String password;
+    public Renter company;
+    public double balance;
     /** REGEX untuk mengecek email dan password */
-    public final String REGEX_EMAIL = "netlab@ui.ac.id";
-    public final String REGEX_PASSWORD = "Password1234";
+    public static final String REGEX_EMAIL = "^[a-zA-Z0-9]+@[a-zA-Z_]+?\\.[a-zA-Z.]+[a-zA-Z]+$";
+    public static  final String REGEX_PASSWORD = "^( =.*[a-z])( =.*[A-Z])( =.*\\d)[a-zA-Z\\d]{8,}$";
 
     /**
      * @return null karena kosong
@@ -45,6 +47,8 @@ public class Account extends Serializable{
         this.email = email;
         this.name = name;
         this.password = password;
+        this.balance = 0;
+        this.company = null;
     }
 
     /**
@@ -55,7 +59,13 @@ public class Account extends Serializable{
         return email + name + password;
     }
 
-    public boolean validate(String REGEX_EMAIL, String REGEX_PASSWORD){
+    /**
+     *
+     * @param REGEX_EMAIL untuk memasukan email yang ingin dicek
+     * @param REGEX_PASSWORD untuk memasukan password yang ingin di cek
+     * @return true jika keduanya sesuai format false jika salah satu atau keduanya tidak sesuai format
+     */
+    public static boolean validate(String REGEX_EMAIL, String REGEX_PASSWORD){
         Pattern email = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\\\d)[a-zA-Z\\\\d]{8,}$");
         Pattern password = Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z]+\\\\.[a-zA-Z]{2,4}$");
         Matcher emailMatcher = email.matcher(REGEX_EMAIL);
