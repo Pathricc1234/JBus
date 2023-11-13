@@ -28,14 +28,14 @@ public class Renter extends Serializable{
         this.address = address;
     }
 
-    public boolean validate(String name, String phone){
+    public static boolean validate(String name, String phone){
         Pattern namePattern = Pattern.compile(REGEX_NAME);
         Pattern phonePattern = Pattern.compile(REGEX_PHONE);
         Matcher phoneMatch = phonePattern.matcher(phone);
         Matcher nameMatch = namePattern.matcher(name);
         boolean nameFound = nameMatch.find();
         boolean phoneFound = phoneMatch.find();
-        if(nameFound || phoneFound){
+        if(nameFound && phoneFound){
             return true;
         }
         return false;

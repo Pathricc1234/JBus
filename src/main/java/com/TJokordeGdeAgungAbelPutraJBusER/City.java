@@ -3,12 +3,16 @@ package com.TJokordeGdeAgungAbelPutraJBusER;
 /**
  * berisi kota asal maupun tujuan
  */
-enum City{
-    JAKARTA,
-    BANDUNG,
-    DEPOK,
-    SEMARANG,
-    SURABAYA,
+public enum City{
     BALI,
-    YOGYAKARTA;
+    BEKASI,
+    DEPOK,
+    TANGERANG,
+    YOGYAKARTA,
+    SEMARANG,
+    BANDUNG,
+    JAKARTA,
+    BOGOR,
+    SURABAYA,
+    SUKABUMI;
 }

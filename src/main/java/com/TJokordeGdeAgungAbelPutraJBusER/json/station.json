@@ -1,0 +1,30 @@
+[
+  {
+    "stationName":"Terminal Jatijajar",
+    "city":"DEPOK",
+    "address":"Jl. Jatijajar 1 No.04, Jatijajar, Kec. Tapos, Jawa Barat",
+    "id":0
+  },
+  {
+    "stationName":"Terminal Manggarai",
+    "city":"JAKARTA",
+    "address":"RT.2/RW.8, Pasar Manggis, Kota Jakarta Selatan",
+    "id":1
+  },
+  {
+    "stationName":"Terminal Sukabumi",
+    "city":"SUKABUMI",
+    "address":"Jalan Lingkar Selatan Nomor 7, Kota Sukabumi",
+    "id":2
+  },
+  {"stationName":"Terminal Purabaya",
+    "city":"SURABAYA",
+    "address":"Kasian, Bungurasih, Kabupaten Sidoarjo, Jawa Timur",
+    "id":3
+  },
+  {"stationName":"Terminal Giwangan",
+    "city":"SURABAYA",
+    "address":"Giwangan, Kec. Umbulharjo, Daerah Istimewa Yogyakarta",
+    "id":4
+  }
+]

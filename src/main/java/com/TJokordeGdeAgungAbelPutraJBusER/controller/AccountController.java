@@ -1,7 +1,7 @@
 package com.TJokordeGdeAgungAbelPutraJBusER.controller;
 
 import com.TJokordeGdeAgungAbelPutraJBusER.Account;
-import com.TJokordeGdeAgungAbelPutraJBusER.JsonTable;
+import com.TJokordeGdeAgungAbelPutraJBusER.dbjson.JsonTable;
 import com.TJokordeGdeAgungAbelPutraJBusER.Renter;
 import com.TJokordeGdeAgungAbelPutraJBusER.dbjson.JsonAutowired;
 import org.springframework.web.bind.annotation.*;
@@ -112,6 +112,7 @@ public class AccountController implements BasicGetController<Account>{
                 break;
             }
         }
+
         if(rentReg != null){
             if(rentReg.company == null){
                 Renter newRenter = new Renter(companyName,phoneNumber,address);

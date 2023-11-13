@@ -1,7 +1,7 @@
 package com.TJokordeGdeAgungAbelPutraJBusER.controller;
 
 import com.TJokordeGdeAgungAbelPutraJBusER.Algorithm;
-import com.TJokordeGdeAgungAbelPutraJBusER.JsonTable;
+import com.TJokordeGdeAgungAbelPutraJBusER.dbjson.JsonTable;
 import com.TJokordeGdeAgungAbelPutraJBusER.Serializable;
 import org.springframework.web.bind.annotation.*;
 import java.util.*;

@@ -3,7 +3,7 @@ package com.TJokordeGdeAgungAbelPutraJBusER;
 /**
  * berisi fasilitas-fasilitas dari bus
  */
-enum Facility{
+public enum Facility{
     AC,
     LUNCH,
     TOILET,
