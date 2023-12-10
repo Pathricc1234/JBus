@@ -4,10 +4,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * The {@code Account} merepresentasikan akun dari user
- * dan parent class {@link Serializable}
+ * Account class merepresentasikan akun dari user
  *
- * class ini membuat akun dari user dan mengebalikan semua informasi
+ * @author Tjokorde Gde Agung Abel Putra
+ * @version 1.0
  */
 public class Account extends Serializable{
     /** email dari user */
@@ -16,22 +16,19 @@ public class Account extends Serializable{
     public String name;
     /** password user */
     public String password;
+    /** company dari user (user harus membuat di class lain agar dapat memiliki) */
     public Renter company;
+    /** saldo uang yang dimiliki user */
     public double balance;
     /** REGEX untuk mengecek email dan password */
+    /** EMAIl harus berupa huruf dan angka dan memiliki @ dan domain hanya memilki huruf */
     public static final String REGEX_EMAIL = "^[a-zA-Z0-9]+@[a-zA-Z_]+?\\.[a-zA-Z.]+[a-zA-Z]+$";
+    /** Password minimal memiliki 1 kapital, 1 lowercase, 1 angka, dan minimal memilki panjang 8 karakter */
     public static  final String REGEX_PASSWORD = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
 
-    /**
-     * @return null karena kosong
-     */
     public Object write(){
         return null;
     }
-
-    /**
-     * @return false karena berupa boolean
-     */
     public  boolean read(String content){
         return false;
     }
@@ -78,6 +75,10 @@ public class Account extends Serializable{
         return false;
     }
 
+    /**
+     * @param ammount adalah jumlah uang yang diinput user
+     * @return false jika balance yang dimasukan negatif, true jika balance tidak negatif dan nemabah balance pada class
+     */
     public boolean topUp(double ammount){
         if(ammount <= 0){
             return false;

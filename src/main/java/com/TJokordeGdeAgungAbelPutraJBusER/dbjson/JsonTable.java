@@ -1,11 +1,14 @@
 package com.TJokordeGdeAgungAbelPutraJBusER.dbjson;
 
 import com.TJokordeGdeAgungAbelPutraJBusER.Serializable;
+import com.TJokordeGdeAgungAbelPutraJBusER.TimestampSerializer;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 
 import java.io.*;
 import java.lang.reflect.Array;
+import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.Vector;
 
@@ -15,7 +18,7 @@ import java.util.Vector;
  * @author Rafie Amandio
  */
 public class JsonTable<T> extends Vector<T> {
-    private static final Gson gson = new Gson();
+    private static final Gson gson = new GsonBuilder().registerTypeAdapter(Timestamp.class, new TimestampSerializer()).create();
     public final String filepath;
 
     @SuppressWarnings("unchecked")

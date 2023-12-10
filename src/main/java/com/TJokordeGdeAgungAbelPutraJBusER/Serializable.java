@@ -2,6 +2,12 @@ package com.TJokordeGdeAgungAbelPutraJBusER;
 import java.util.Comparator;
 import java.util.HashMap;
 
+/**
+ * Station class adalah untuk melakukan serialisasi
+ *
+ * @author Tjokorde Gde Agung Abel Putra
+ * @version 1.0
+ */
 public class Serializable implements Comparable<Serializable> {
     public final int id;
     private static HashMap<Class<?>, Integer> mapCounter = new HashMap<Class <?>, Integer>();

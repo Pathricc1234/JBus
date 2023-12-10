@@ -1,0 +1,58 @@
+[
+  {
+    "busId": 0,
+    "departureDate": "2023-12-14 15:00:00",
+    "busSeat": [
+      "ER01",
+      "ER02",
+      "ER03"
+    ],
+    "time": "2023-12-14 15:00:00",
+    "buyerId": 3,
+    "renterId": 2,
+    "rating": "GOOD",
+    "status": "SUCCESS",
+    "id": 0
+  },
+  {
+    "busId": 0,
+    "departureDate": "2023-12-14 15:00:00",
+    "busSeat": [
+      "ER07",
+      "ER08"
+    ],
+    "time": "2023-12-14 15:00:00",
+    "buyerId": 3,
+    "renterId": 2,
+    "rating": "NEUTRAL",
+    "status": "SUCCESS",
+    "id": 1
+  },
+  {
+    "busId": 0,
+    "departureDate": "2023-12-14 15:00:00",
+    "busSeat": [
+      "ER06"
+    ],
+    "time": "2023-12-14 15:00:00",
+    "buyerId": 3,
+    "renterId": 2,
+    "rating": "NONE",
+    "status": "WAITING",
+    "id": 2
+  },
+  {
+    "busId": 0,
+    "departureDate": "2023-12-14 15:00:00",
+    "busSeat": [
+      "ER04",
+      "ER05"
+    ],
+    "time": "2023-12-14 15:00:00",
+    "buyerId": 3,
+    "renterId": 2,
+    "rating": "NONE",
+    "status": "FAILED",
+    "id": 3
+  }
+]

@@ -4,54 +4,51 @@ import java.sql.Timestamp;
 import java.text.*;
 import java.util.List;
 
+/**
+ * Payment Class merepresentasikan pembelian dari bus
+ *
+ * @author Tjokorde Gde Agung Abel Putra
+ * @version 1.0
+ */
 public class Payment extends Invoice{
-    private int busId;
+    /**
+     * id dari Bus yang dipilih
+     */
+    public int busId;
+    /**
+     * Waktu keberangkatan dari bus
+     */
     public Timestamp departureDate;
+    /**
+     * daftar kursi yang dipesan
+     */
     public List<String> busSeat;
     public Payment(int buyerId, int renterId, int busId, List<String> busSeat, Timestamp departureDate){
-        super(buyerId,renterId);
+        super(buyerId,renterId,departureDate);
         this.busId = busId;
         this.departureDate = departureDate;
         this.busSeat = busSeat;
     }
-    public Payment(Account buyer, Renter renter, int busId, List<String> busSeat, Timestamp departureDate){
-        super(buyer,renter);
-        this.busId = busId;
-        this.departureDate = departureDate;
-        this.busSeat = busSeat;
-    }
-    public int getBusId(){
-        return busId;
-    }
-    public static boolean makeBooking(Timestamp departureSchedule, String seat, Bus bus){
-        for (Schedule schedule : bus.schedules) {
-            if (schedule.departureSchedule.equals(departureSchedule) && schedule.isSeatAvailable(seat)) {
-                schedule.bookSeat(seat);
-                return true;
-            }
-        }
-        return false;
-    }
-    public String getDepartureInfo(){
-        return busId + " " + departureDate + " " + busSeat;
-    }
-    public String getTime(){
-        SimpleDateFormat SDFormat = new SimpleDateFormat("MM dd, yyyy hh:mm:ss");
-        String f_date =  SDFormat.format(departureDate.getTime());
-        return f_date;
-    }
+
+    /**
+     * method untuk mengetahui apakah schedule ada
+     * @param departureSchedule tanggal keberangkatan yang dipilih
+     * @param seat kursi yang dipilih
+     * @param bus bus yang dipilih
+     * @return schedule
+     */
     public static Schedule availableSchedule(Timestamp departureSchedule, String seat, Bus bus) {
         Predicate<Schedule> condition = schedule -> schedule.departureSchedule.equals(departureSchedule) && schedule.isSeatAvailable(seat);
         return Algorithm.find(bus.schedules, condition);
     }
-    public static Schedule availableSchedule(Timestamp departureSchedule, List<String> seats, Bus bus) {
-        for (Schedule schedule : bus.schedules) {
-            if (schedule.departureSchedule.equals(departureSchedule)) {
-                return schedule;
-            }
-        }
-        return null;
-    }
+
+    /**
+     * method untuk mengecek apakah kursi ada dan membooking
+     * @param departureSchedule waktu keberangkatan
+     * @param seats daftar kursi yang dipilih
+     * @param bus bus yang dipilih
+     * @return true jika booking berhasil
+     */
     public static boolean makeBooking(Timestamp departureSchedule, List<String> seats, Bus bus) {
         boolean booked = false;
         for (String seat : seats) {

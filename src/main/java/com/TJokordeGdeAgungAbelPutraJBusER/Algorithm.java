@@ -2,6 +2,12 @@ package com.TJokordeGdeAgungAbelPutraJBusER;
 
 import java.util.*;
 
+/**
+ * Algorith class untuk melakukan operasi collect, find,exist, dan paginate
+ *
+ * @author Tjokorde Gde Agung Abel Putra
+ * @version 1.0
+ */
 public class Algorithm {
     private Algorithm() {
     }

@@ -1,23 +1,62 @@
 [
   {
-    "email":"pbubble@gmail.com",
-    "name":"PrincessBubblegum1",
-    "password":"632ce418f76c3d678f1a326c2720e210",
-    "balance":0.0,
-    "id":0
+    "email": "pbubble@gmail.com",
+    "name": "PrincessBubblegum1",
+    "password": "f8a9af363eabc1cf9cd01df3ff720f2d",
+    "balance": 500000,
+    "id": 0
   },
   {
-    "email":"siucok@gmail.com",
-    "name":"ucokbaba1",
-    "password":"c66fde8fa8ce27dd3bb71b1250ef4a4f",
-    "company":
-    {
-      "address":"medanmerdekautara",
-      "companyName":"bismania",
-      "phoneNumber":"1234567890",
-      "id":0
+    "email": "siucok@gmail.com",
+    "name": "ucokbaba1",
+    "password": "c66fde8fa8ce27dd3bb71b1250ef4a4f",
+    "company": {
+      "address": "medanmerdekautara",
+      "companyName": "bismania",
+      "phoneNumber": "1234567890",
+      "id": 0
     },
-    "balance":10000.0,
-    "id":1
+    "balance": 10000,
+    "id": 1
+  },
+  {
+    "email": "abelputra101@gmail.com",
+    "name": "abelputra",
+    "password": "ee99156a7d504cbf2b1f5b28b0a70b58",
+    "company": {
+      "address": "medanmerdekaselatan",
+      "companyName": "BisMasAmba",
+      "phoneNumber": "081908069420",
+      "id": 0
+    },
+    "balance": 850000,
+    "id": 2
+  },
+  {
+    "email": "abelputra102@gmail.com",
+    "name": "abelputra",
+    "password": "ee99156a7d504cbf2b1f5b28b0a70b58",
+    "company": {
+      "address": "medanmerdekaselata",
+      "companyName": "AmbatubusCompany",
+      "phoneNumber": "081908013969",
+      "id": 0
+    },
+    "balance": 50000,
+    "id": 3
+  },
+  {
+    "email": "abelputra69@gmail.com",
+    "name": "abelputra69",
+    "password": "da936eb0a5518b1f50dc5cce619341fa",
+    "balance": 0,
+    "id": 4
+  },
+  {
+    "email": "abelputra103@gmail.com",
+    "name": "abelputra103",
+    "password": "ee99156a7d504cbf2b1f5b28b0a70b58",
+    "balance": 0,
+    "id": 5
   }
 ]

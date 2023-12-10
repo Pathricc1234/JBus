@@ -1,5 +1,9 @@
 package com.TJokordeGdeAgungAbelPutraJBusER.controller;
 
+/**
+ * Mendapatkan pesan dari operasi Controller
+ * @param <T> Tipe data
+ */
 public class BaseResponse<T> {
     public boolean success;
     public String message;

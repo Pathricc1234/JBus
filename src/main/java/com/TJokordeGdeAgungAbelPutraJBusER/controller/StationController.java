@@ -1,7 +1,6 @@
 package com.TJokordeGdeAgungAbelPutraJBusER.controller;
 
 import com.TJokordeGdeAgungAbelPutraJBusER.Account;
-import com.TJokordeGdeAgungAbelPutraJBusER.Bus;
 import com.TJokordeGdeAgungAbelPutraJBusER.City;
 import com.TJokordeGdeAgungAbelPutraJBusER.Station;
 import com.TJokordeGdeAgungAbelPutraJBusER.dbjson.JsonAutowired;
@@ -9,6 +8,7 @@ import com.TJokordeGdeAgungAbelPutraJBusER.dbjson.JsonTable;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/station")
@@ -16,12 +16,12 @@ public class StationController implements BasicGetController<Station> {
     public JsonTable<Station> stationTable;
     public StationController(){
         try {
-            this.stationTable = new JsonTable<>(Station.class,"src\\main\\java\\com\\TJokordeGdeAgungAbelPutraJBusER\\json\\account.json");
+            this.stationTable = new JsonTable<>(Station.class,"src\\main\\java\\com\\TJokordeGdeAgungAbelPutraJBusER\\json\\station.json");
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    @JsonAutowired(value = Account.class, filepath = "src\\main\\java\\com\\TJokordeGdeAgungAbelPutraJBusER\\json\\account.json")
+    @JsonAutowired(value = Account.class, filepath = "src\\main\\java\\com\\TJokordeGdeAgungAbelPutraJBusER\\json\\station.json")
     private Account account;
     @Override
     public JsonTable<Station> getJsonTable() {
@@ -59,6 +59,11 @@ public class StationController implements BasicGetController<Station> {
             // Handle other unexpected errors
             return new BaseResponse<>(false, "An error occurred while adding the station", null);
         }
+    }
+
+    @GetMapping("/getAll")
+    public List<Station> getAllStation(){
+        return getJsonTable();
     }
 
 }
